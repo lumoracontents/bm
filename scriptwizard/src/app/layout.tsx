@@ -10,6 +10,12 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
+  verification: {
+    google: "GAAboQ9Kj0ijLGe8yPi3WZb1Pq0DwD-GMcGZiUSAcBA",
+    other: {
+      "naver-site-verification": "df7423bf2fba9b91adc3a6ef2a53d8c56974e736",
+    },
+  },
   keywords: [
     "AI 콘텐츠 자동화",
     "유튜브 블로그 변환",
