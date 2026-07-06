@@ -73,6 +73,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-N5PLMGMZ');`}
         </Script>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-Y16RHSH9BB"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Y16RHSH9BB');`}
+        </Script>
       </head>
       <body>
         <noscript>
