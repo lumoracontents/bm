@@ -7,6 +7,7 @@ type WorkspacePageProps = {
   description: string;
   icon: LucideIcon;
   items: string[];
+  children?: React.ReactNode;
 };
 
 export function WorkspacePage({
@@ -15,6 +16,7 @@ export function WorkspacePage({
   description,
   icon: Icon,
   items,
+  children,
 }: WorkspacePageProps) {
   return (
     <main className="min-h-screen bg-slate-50">
@@ -60,6 +62,8 @@ export function WorkspacePage({
             </div>
           ))}
         </div>
+
+        {children ? <div className="mt-8">{children}</div> : null}
       </section>
     </main>
   );
