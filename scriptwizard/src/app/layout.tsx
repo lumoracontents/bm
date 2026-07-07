@@ -11,6 +11,14 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/favicon.svg",
+    apple: "/apple-touch-icon.png",
+  },
   verification: {
     google: "GAAboQ9Kj0ijLGe8yPi3WZb1Pq0DwD-GMcGZiUSAcBA",
     other: {
