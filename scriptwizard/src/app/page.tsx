@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle2,
+  ClipboardList,
   FileText,
   Layers3,
   MessageSquareText,
@@ -20,6 +21,7 @@ import {
   formatPrice,
   outcomes,
   products,
+  remixAuditService,
   siteConfig,
 } from "@/lib/site";
 
@@ -49,6 +51,23 @@ const jsonLd = {
         availability: "https://schema.org/InStock",
         url: `${siteConfig.url}/products/${product.slug}`,
       })),
+    },
+    {
+      "@type": "Service",
+      name: remixAuditService.name,
+      description: remixAuditService.description,
+      provider: {
+        "@type": "Organization",
+        name: siteConfig.name,
+        url: siteConfig.url,
+      },
+      offers: {
+        "@type": "Offer",
+        price: remixAuditService.price,
+        priceCurrency: "KRW",
+        availability: "https://schema.org/InStock",
+        url: `${siteConfig.url}/services/${remixAuditService.slug}`,
+      },
     },
     {
       "@type": "FAQPage",
@@ -175,6 +194,56 @@ export default function Home() {
                 </article>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section id="services" className="bg-brand-50 py-14 sm:py-16 lg:py-20">
+          <div className="mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+            <div>
+              <p className="text-sm font-semibold text-brand-700">{remixAuditService.eyebrow}</p>
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl">
+                강의 전, 내 영상이 돈 되는 콘텐츠 자산인지 먼저 진단합니다
+              </h2>
+              <p className="mt-4 text-base leading-7 text-slate-700">
+                {remixAuditService.summary}
+              </p>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href={`/services/${remixAuditService.slug}`}
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-brand-700 px-5 text-sm font-semibold text-white transition hover:bg-brand-800"
+                >
+                  서비스 보기
+                  <ArrowRight size={17} aria-hidden="true" />
+                </Link>
+                <span className="inline-flex h-12 items-center rounded-md border border-brand-200 bg-white px-4 text-sm font-semibold text-brand-800">
+                  {formatPrice(remixAuditService.price)} · {remixAuditService.turnaround}
+                </span>
+              </div>
+            </div>
+
+            <article className="rounded-lg border border-brand-100 bg-white p-5 shadow-sm sm:p-6">
+              <div className="flex items-start gap-3">
+                <span className="grid size-11 shrink-0 place-items-center rounded-md bg-brand-100 text-brand-800">
+                  <ClipboardList size={22} aria-hidden="true" />
+                </span>
+                <div>
+                  <h3 className="text-2xl font-semibold text-slate-950">
+                    {remixAuditService.name}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    {remixAuditService.description}
+                  </p>
+                </div>
+              </div>
+              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                {remixAuditService.includes.map((item) => (
+                  <li key={item} className="flex gap-2 text-sm text-slate-700">
+                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-brand-600" aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
           </div>
         </section>
 
