@@ -21,6 +21,10 @@ const BACKUP_TABLES = [
 
 const PAGE_SIZE = 1000;
 
+const SENSITIVE_COLUMNS: Partial<Record<(typeof BACKUP_TABLES)[number], string[]>> = {
+  orders: ["payment_key"],
+};
+
 type BackupRequestBody = {
   token?: string;
 };
@@ -115,6 +119,28 @@ async function fetchTableRows(
   return rows;
 }
 
+function removeSensitiveColumns(table: (typeof BACKUP_TABLES)[number], rows: unknown[]) {
+  const columns = SENSITIVE_COLUMNS[table] ?? [];
+
+  if (columns.length === 0) {
+    return rows;
+  }
+
+  return rows.map((row) => {
+    if (!row || typeof row !== "object" || Array.isArray(row)) {
+      return row;
+    }
+
+    const sanitized = { ...(row as Record<string, unknown>) };
+
+    for (const column of columns) {
+      delete sanitized[column];
+    }
+
+    return sanitized;
+  });
+}
+
 export async function POST(request: Request) {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -157,7 +183,7 @@ export async function POST(request: Request) {
 
   for (const table of BACKUP_TABLES) {
     try {
-      const rows = await fetchTableRows(serviceClient, table);
+      const rows = removeSensitiveColumns(table, await fetchTableRows(serviceClient, table));
       data[table] = rows;
       rowCounts[table] = rows.length;
     } catch (error) {
@@ -184,6 +210,7 @@ export async function POST(request: Request) {
       version: 1,
       tables: BACKUP_TABLES,
       rowCounts,
+      excludedColumns: SENSITIVE_COLUMNS,
     },
     data,
     errors,

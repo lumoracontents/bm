@@ -94,7 +94,7 @@ export function DbBackupPanel() {
           ) : (
             <Download size={16} aria-hidden="true" />
           )}
-          백업 다운로드
+          백업
         </button>
       </div>
 
