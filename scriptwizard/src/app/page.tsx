@@ -4,6 +4,7 @@ import {
   ArrowRight,
   CheckCircle2,
   ClipboardList,
+  Download,
   FileText,
   Layers3,
   MessageSquareText,
@@ -23,6 +24,7 @@ import {
   products,
   remixAuditService,
   siteConfig,
+  youtubeTranscriptTool,
 } from "@/lib/site";
 
 const jsonLd = {
@@ -67,6 +69,19 @@ const jsonLd = {
         priceCurrency: "KRW",
         availability: "https://schema.org/InStock",
         url: `${siteConfig.url}/services/${remixAuditService.slug}`,
+      },
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: youtubeTranscriptTool.name,
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      description: youtubeTranscriptTool.description,
+      offers: {
+        "@type": "Offer",
+        price: 0,
+        priceCurrency: "KRW",
+        url: `${siteConfig.url}/tools/${youtubeTranscriptTool.slug}`,
       },
     },
     {
@@ -243,6 +258,37 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
+            </article>
+
+            <article className="rounded-lg border border-brand-100 bg-white p-5 shadow-sm sm:p-6 lg:col-span-2">
+              <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+                <div className="flex items-start gap-3">
+                  <span className="grid size-11 shrink-0 place-items-center rounded-md bg-brand-100 text-brand-800">
+                    <Download size={22} aria-hidden="true" />
+                  </span>
+                  <div>
+                    <p className="text-sm font-semibold text-brand-700">
+                      {youtubeTranscriptTool.eyebrow}
+                    </p>
+                    <h3 className="mt-2 text-2xl font-semibold text-slate-950">
+                      {youtubeTranscriptTool.name}
+                    </h3>
+                    <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">
+                      {youtubeTranscriptTool.summary}
+                    </p>
+                    <p className="mt-3 text-sm font-semibold text-brand-800">
+                      무료 월 {youtubeTranscriptTool.freeQuota}개 · 유료 100/500/1,000개 다운로드
+                    </p>
+                  </div>
+                </div>
+                <Link
+                  href={`/tools/${youtubeTranscriptTool.slug}`}
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-brand-200 px-5 text-sm font-semibold text-brand-900 transition hover:bg-brand-50"
+                >
+                  도구 보기
+                  <ArrowRight size={17} aria-hidden="true" />
+                </Link>
+              </div>
             </article>
           </div>
         </section>
