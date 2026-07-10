@@ -90,6 +90,50 @@ export const remixAuditService = {
   cta: "진단 리포트 신청하기",
 };
 
+export const youtubeTranscriptTool = {
+  slug: "youtube-transcript",
+  name: "유튜브 스크립트 다운로드",
+  eyebrow: "신규 자동화 도구",
+  summary: "유튜브 링크를 넣으면 영상 스크립트를 TXT 파일로 내려받는 콘텐츠 원본 확보 도구",
+  description:
+    "영상 링크를 입력해 스크립트를 저장하고, 이후 블로그·스레드·카드뉴스·쇼츠 대본 재가공의 원본 자료로 바로 사용할 수 있게 설계한 기능형 서비스입니다.",
+  cta: "스크립트 다운로드",
+  freeQuota: 10,
+  paidMultipliers: [10, 50, 100],
+};
+
+export const transcriptPlans = [
+  {
+    name: "Free",
+    price: 0,
+    monthlyQuota: 10,
+    summary: "월 10개 영상까지 무료로 스크립트 다운로드",
+    features: ["기본 TXT 다운로드", "유튜브 링크 분석", "개인 학습용 사용"],
+  },
+  {
+    name: "Starter",
+    price: 9900,
+    monthlyQuota: 100,
+    summary: "무료 사용량의 10배, 가벼운 1인 창작자용",
+    features: ["월 100개 다운로드", "스크립트 파일명 자동 정리", "기본 콘텐츠 재가공 메모"],
+  },
+  {
+    name: "Creator",
+    price: 29000,
+    monthlyQuota: 500,
+    summary: "무료 사용량의 50배, 꾸준히 발행하는 채널용",
+    features: ["월 500개 다운로드", "대량 작업 큐 설계", "채널별 작업 기록"],
+    highlighted: true,
+  },
+  {
+    name: "Pro",
+    price: 59000,
+    monthlyQuota: 1000,
+    summary: "무료 사용량의 100배, 팀 단위 콘텐츠 운영용",
+    features: ["월 1,000개 다운로드", "팀 작업용 다운로드 기록", "우선 처리 한도"],
+  },
+];
+
 export const audience = [
   "유튜브 영상을 만들지만 블로그, 인스타, 스레드까지 확장하지 못하는 창작자",
   "AI 도구를 써도 결과물이 산만해서 실제 발행까지 이어지지 않는 1인 사업자",
