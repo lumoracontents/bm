@@ -1,0 +1,9 @@
+200 /
+200 /tools/content-pack
+200 /tools/youtube-transcript
+200 /dashboard
+200 /sitemap.xml
+200 /robots.txt
+content_pack_title=AI 멀티채널 콘텐츠 패키지 생성기
+
+header_link=/tools/content-pack

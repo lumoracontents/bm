@@ -1,0 +1,2 @@
+npm_ci_lint_exit=0
+npm_ci_build_exit=0

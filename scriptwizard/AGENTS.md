@@ -76,6 +76,13 @@ Keep both tags unless the owner explicitly asks to replace them.
 
 ## Recent Work
 
+2026-07-11 dependency maintenance handoff:
+
+- Report: `maintenance/reports/DEPENDENCY_MAINTENANCE_REPORT_2026-07-11.md`
+- Handoff: `maintenance/DEPENDENCY_MAINTENANCE_HANDOFF.md`
+- Safe dependency updates were applied and verified with `npm run lint`, `npm run build`, and local smoke checks.
+- Remaining Next/PostCSS moderate audit warning is documented in the report and should not be force-fixed without a separate compatibility branch.
+
 The main landing page was simplified and mobile optimized:
 
 - Reduced landing page sections.
