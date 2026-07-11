@@ -17,6 +17,7 @@ import { SiteHeader } from "@/components/site-header";
 import {
   audience,
   consulting,
+  contentPackTool,
   curriculum,
   faqs,
   formatPrice,
@@ -82,6 +83,19 @@ const jsonLd = {
         price: 0,
         priceCurrency: "KRW",
         url: `${siteConfig.url}/tools/${youtubeTranscriptTool.slug}`,
+      },
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: contentPackTool.name,
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      description: contentPackTool.description,
+      offers: {
+        "@type": "Offer",
+        price: 0,
+        priceCurrency: "KRW",
+        url: `${siteConfig.url}/tools/${contentPackTool.slug}`,
       },
     },
     {
@@ -258,6 +272,37 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
+            </article>
+
+            <article className="rounded-lg border border-brand-100 bg-white p-5 shadow-sm sm:p-6 lg:col-span-2">
+              <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+                <div className="flex items-start gap-3">
+                  <span className="grid size-11 shrink-0 place-items-center rounded-md bg-brand-100 text-brand-800">
+                    <MessageSquareText size={22} aria-hidden="true" />
+                  </span>
+                  <div>
+                    <p className="text-sm font-semibold text-brand-700">
+                      {contentPackTool.eyebrow}
+                    </p>
+                    <h3 className="mt-2 text-2xl font-semibold text-slate-950">
+                      {contentPackTool.name}
+                    </h3>
+                    <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">
+                      {contentPackTool.summary}
+                    </p>
+                    <p className="mt-3 text-sm font-semibold text-brand-800">
+                      무료 월 {contentPackTool.freeQuota}회 · Starter 30회 · Pro 150회 · Business 500회
+                    </p>
+                  </div>
+                </div>
+                <Link
+                  href={`/tools/${contentPackTool.slug}`}
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-brand-700 px-5 text-sm font-semibold text-white transition hover:bg-brand-800"
+                >
+                  샘플 생성기 보기
+                  <ArrowRight size={17} aria-hidden="true" />
+                </Link>
+              </div>
             </article>
 
             <article className="rounded-lg border border-brand-100 bg-white p-5 shadow-sm sm:p-6 lg:col-span-2">

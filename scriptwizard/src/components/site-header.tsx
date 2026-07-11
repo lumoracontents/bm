@@ -4,7 +4,8 @@ import { ArrowRight, BookOpenCheck } from "lucide-react";
 const navItems = [
   { href: "/#recommend", label: "추천" },
   { href: "/#services", label: "서비스" },
-  { href: "/tools/youtube-transcript", label: "도구" },
+  { href: "/tools/content-pack", label: "AI 생성기" },
+  { href: "/tools/youtube-transcript", label: "스크립트" },
   { href: "/#curriculum", label: "커리큘럼" },
   { href: "/#pricing", label: "가격" },
   { href: "/blog", label: "블로그" },
