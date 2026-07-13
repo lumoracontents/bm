@@ -1,0 +1,24 @@
+scriptwizard@0.1.0 /home/gods1/lumora_agent/managed-sites/bm/scriptwizard
+├── @emnapi/core@1.11.2 extraneous
+├── @emnapi/runtime@1.11.2 extraneous
+├── @emnapi/wasi-threads@1.2.2 extraneous
+├── @napi-rs/wasm-runtime@1.1.6 extraneous
+├── @supabase/ssr@0.12.0
+├── @supabase/supabase-js@2.110.2
+├── @tailwindcss/postcss@4.3.2
+├── @tybys/wasm-util@0.10.3 extraneous
+├── @types/node@20.19.43
+├── @types/react-dom@19.2.3
+├── @types/react@19.2.17
+├── class-variance-authority@0.7.1
+├── clsx@2.1.1
+├── eslint-config-next@16.2.10
+├── eslint@9.39.5
+├── lucide-react@1.24.0
+├── next@16.2.10
+├── react-dom@19.2.4
+├── react@19.2.4
+├── tailwind-merge@3.6.0
+├── tailwindcss@4.3.2
+├── typescript@5.9.3
+└── zod@4.4.3

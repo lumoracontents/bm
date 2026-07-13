@@ -1,0 +1,3 @@
+node_version=v22.23.1
+npm_version=10.9.8
+package_engines={"node":">=22 <23"}

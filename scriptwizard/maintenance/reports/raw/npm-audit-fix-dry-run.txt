@@ -1,0 +1,151 @@
+add lightningcss-win32-x64-msvc 1.32.0
+add lightningcss-win32-arm64-msvc 1.32.0
+add lightningcss-linux-arm64-musl 1.32.0
+add lightningcss-linux-arm64-gnu 1.32.0
+add lightningcss-linux-arm-gnueabihf 1.32.0
+add lightningcss-freebsd-x64 1.32.0
+add lightningcss-darwin-x64 1.32.0
+add lightningcss-darwin-arm64 1.32.0
+add lightningcss-android-arm64 1.32.0
+add @unrs/resolver-binding-win32-x64-msvc 1.12.2
+add @unrs/resolver-binding-win32-ia32-msvc 1.12.2
+add @unrs/resolver-binding-win32-arm64-msvc 1.12.2
+add @unrs/resolver-binding-wasm32-wasi 1.12.2
+add @emnapi/wasi-threads 1.2.1
+add @emnapi/runtime 1.10.0
+add @emnapi/core 1.10.0
+add @unrs/resolver-binding-openharmony-arm64 1.12.2
+add @unrs/resolver-binding-linux-s390x-gnu 1.12.2
+add @unrs/resolver-binding-linux-riscv64-musl 1.12.2
+add @unrs/resolver-binding-linux-riscv64-gnu 1.12.2
+add @unrs/resolver-binding-linux-ppc64-gnu 1.12.2
+add @unrs/resolver-binding-linux-loong64-musl 1.12.2
+add @unrs/resolver-binding-linux-loong64-gnu 1.12.2
+add @unrs/resolver-binding-linux-arm64-musl 1.12.2
+add @unrs/resolver-binding-linux-arm64-gnu 1.12.2
+add @unrs/resolver-binding-linux-arm-musleabihf 1.12.2
+add @unrs/resolver-binding-linux-arm-gnueabihf 1.12.2
+add @unrs/resolver-binding-freebsd-x64 1.12.2
+add @unrs/resolver-binding-darwin-x64 1.12.2
+add @unrs/resolver-binding-darwin-arm64 1.12.2
+add @unrs/resolver-binding-android-arm64 1.12.2
+add @unrs/resolver-binding-android-arm-eabi 1.12.2
+add @tailwindcss/oxide-win32-x64-msvc 4.3.2
+add @tailwindcss/oxide-win32-arm64-msvc 4.3.2
+add @tailwindcss/oxide-wasm32-wasi 4.3.2
+add @tailwindcss/oxide-linux-arm64-musl 4.3.2
+add @tailwindcss/oxide-linux-arm64-gnu 4.3.2
+add @tailwindcss/oxide-linux-arm-gnueabihf 4.3.2
+add @tailwindcss/oxide-freebsd-x64 4.3.2
+add @tailwindcss/oxide-darwin-x64 4.3.2
+add @tailwindcss/oxide-darwin-arm64 4.3.2
+add @tailwindcss/oxide-android-arm64 4.3.2
+add @next/swc-win32-x64-msvc 16.2.10
+add @next/swc-win32-arm64-msvc 16.2.10
+add @next/swc-linux-arm64-musl 16.2.10
+add @next/swc-linux-arm64-gnu 16.2.10
+add @next/swc-darwin-x64 16.2.10
+add @next/swc-darwin-arm64 16.2.10
+add @img/sharp-win32-x64 0.34.5
+add @img/sharp-win32-ia32 0.34.5
+add @img/sharp-win32-arm64 0.34.5
+add @img/sharp-wasm32 0.34.5
+add @img/sharp-linuxmusl-arm64 0.34.5
+add @img/sharp-linux-s390x 0.34.5
+add @img/sharp-linux-riscv64 0.34.5
+add @img/sharp-linux-ppc64 0.34.5
+add @img/sharp-linux-arm64 0.34.5
+add @img/sharp-linux-arm 0.34.5
+add @img/sharp-libvips-linuxmusl-arm64 1.2.4
+add @img/sharp-libvips-linux-s390x 1.2.4
+add @img/sharp-libvips-linux-riscv64 1.2.4
+add @img/sharp-libvips-linux-ppc64 1.2.4
+add @img/sharp-libvips-linux-arm64 1.2.4
+add @img/sharp-libvips-linux-arm 1.2.4
+add @img/sharp-libvips-darwin-x64 1.2.4
+add @img/sharp-libvips-darwin-arm64 1.2.4
+add @img/sharp-darwin-x64 0.34.5
+add @img/sharp-darwin-arm64 0.34.5
+{
+  "added": 68,
+  "removed": 0,
+  "changed": 0,
+  "audited": 451,
+  "funding": 182,
+  "audit": {
+    "auditReportVersion": 2,
+    "vulnerabilities": {
+      "next": {
+        "name": "next",
+        "severity": "moderate",
+        "isDirect": true,
+        "via": [
+          "postcss"
+        ],
+        "effects": [],
+        "range": "9.3.4-canary.0 - 16.3.0-canary.5",
+        "nodes": [
+          "node_modules/next"
+        ],
+        "fixAvailable": {
+          "name": "next",
+          "version": "9.3.3",
+          "isSemVerMajor": true
+        }
+      },
+      "postcss": {
+        "name": "postcss",
+        "severity": "moderate",
+        "isDirect": false,
+        "via": [
+          {
+            "source": 1117015,
+            "name": "postcss",
+            "dependency": "postcss",
+            "title": "PostCSS has XSS via Unescaped </style> in its CSS Stringify Output",
+            "url": "https://github.com/advisories/GHSA-qx2v-qp2m-jg93",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-79"
+            ],
+            "cvss": {
+              "score": 6.1,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+            },
+            "range": "<8.5.10"
+          }
+        ],
+        "effects": [
+          "next"
+        ],
+        "range": "<8.5.10",
+        "nodes": [
+          "node_modules/next/node_modules/postcss"
+        ],
+        "fixAvailable": {
+          "name": "next",
+          "version": "9.3.3",
+          "isSemVerMajor": true
+        }
+      }
+    },
+    "metadata": {
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 2,
+        "high": 0,
+        "critical": 0,
+        "total": 2
+      },
+      "dependencies": {
+        "prod": 32,
+        "dev": 383,
+        "optional": 88,
+        "peer": 0,
+        "peerOptional": 0,
+        "total": 450
+      }
+    }
+  }
+}

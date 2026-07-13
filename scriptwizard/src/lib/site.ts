@@ -102,6 +102,50 @@ export const youtubeTranscriptTool = {
   paidMultipliers: [10, 50, 100],
 };
 
+export const contentPackTool = {
+  slug: "content-pack",
+  name: "AI 멀티채널 콘텐츠 패키지 생성기",
+  eyebrow: "AI 샘플 생성 MVP",
+  summary:
+    "유튜브 링크, 영상 제목, 스크립트 일부를 넣으면 블로그·스레드/X·인스타 카드뉴스·쇼츠 대본 샘플을 한 번에 보여주는 도구",
+  description:
+    "실제 AI API 연동 전, 입력값 기반 샘플 결과로 멀티채널 콘텐츠 패키지 생성 흐름과 구독형 비즈니스 모델을 검증하는 MVP입니다.",
+  cta: "샘플 패키지 생성",
+  freeQuota: 3,
+};
+
+export const contentPackPlans = [
+  {
+    name: "Free",
+    price: 0,
+    monthlyQuota: 3,
+    summary: "월 3회 샘플 생성으로 콘텐츠 패키지 흐름을 먼저 확인",
+    features: ["4종 결과물 샘플", "브라우저 내 즉시 생성", "AI API 미연동 MVP 체험"],
+  },
+  {
+    name: "Starter",
+    price: 19000,
+    monthlyQuota: 30,
+    summary: "월 30회 생성, 1인 창작자와 소규모 채널용",
+    features: ["월 30회 생성", "채널별 초안 저장 확장 예정", "블로그·SNS 발행 체크리스트"],
+  },
+  {
+    name: "Pro",
+    price: 49000,
+    monthlyQuota: 150,
+    summary: "월 150회 생성, 꾸준히 발행하는 콘텐츠 운영자용",
+    features: ["월 150회 생성", "콘텐츠 묶음 관리 확장 예정", "팀 리뷰 워크플로 준비"],
+    highlighted: true,
+  },
+  {
+    name: "Business",
+    price: 149000,
+    monthlyQuota: 500,
+    summary: "월 500회 생성, 교육·마케팅 팀의 대량 운영용",
+    features: ["월 500회 생성", "브랜드 톤 프리셋 확장 예정", "우선 처리 한도 설계"],
+  },
+];
+
 export const transcriptPlans = [
   {
     name: "Free",

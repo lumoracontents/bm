@@ -1,0 +1,55 @@
+
+== build ==
+
+> scriptwizard@0.1.0 build
+> next build
+
+▲ Next.js 16.2.10 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.6s
+  Running TypeScript ...
+  Finished TypeScript in 3.0s ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/28) ...
+  Generating static pages using 11 workers (7/28)
+  Generating static pages using 11 workers (14/28)
+  Generating static pages using 11 workers (21/28)
+✓ Generating static pages using 11 workers (28/28) in 466ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /admin
+├ ○ /admin/backups
+├ ƒ /api/admin/db-backup
+├ ƒ /api/payments/confirm
+├ ƒ /api/payments/webhook
+├ ƒ /api/video-token
+├ ○ /assignments
+├ ○ /blog
+├ ● /blog/[slug]
+│ ├ /blog/youtube-to-blog-workflow
+│ ├ /blog/shorts-script-from-long-video
+│ └ /blog/instagram-carousel-content-system
+├ ○ /board
+├ ○ /consulting
+├ ○ /dashboard
+├ ○ /faq
+├ ○ /learn
+├ ● /products/[slug]
+│ ├ /products/ebook
+│ ├ /products/course
+│ └ /products/all-in-one
+├ ○ /resources
+├ ○ /robots.txt
+├ ○ /services/remix-audit
+├ ○ /sitemap.xml
+├ ○ /tools/content-pack
+└ ○ /tools/youtube-transcript
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand

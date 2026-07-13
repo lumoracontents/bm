@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
+import { ChatWidget } from "@/components/chat-widget";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -102,6 +103,7 @@ gtag('config', 'G-Y16RHSH9BB');`}
           />
         </noscript>
         {children}
+        <ChatWidget />
       </body>
     </html>
   );
